@@ -52,13 +52,10 @@ class Solution():
                 self.merge_str += self.str1[each_word] + self.str2[each_word]
 
         elif len(self.str1) > len(self.str2) or len(self.str2) > len(self.str1):
-            # len_geral = (len(self.str1) - len(self.str2)) if len(self.str1) > len(self.str2) else (len(self.str2) - len(self.str1))
-            # last_chars = self.str1[-len_geral:] if len(self.str1) > len(self.str2) else self.str2[-len_geral:]
-
             len_geral = 0
             last_chars = ''
 
-            if len(self.str1) > len(self.str2):
+            if len(self.str1) >= len(self.str2):
                 len_geral = len(self.str1) - len(self.str2)
                 last_chars = self.str1[-len_geral:]
             
@@ -71,16 +68,14 @@ class Solution():
                 last_chars = self.str2[-len_geral:]
             
                 for each_word in range(len(self.str2) - len_geral):
-                    self.merge_str += self.str2[each_word] + self.str1[each_word]
+                    self.merge_str += self.str1[each_word] + self.str2[each_word]
                 
-        elif len(self.str1) <= 1 and len(self.str2) <= 100:
-            print(f'{self.str1} and {self.str2} consist of lowercase English letters.')
+                self.merge_str += last_chars
             
         return self.merge_str
     
 merge_str = Solution()
 
-result_merge_str = merge_str.mergeAlternately('abc', 'pqr')
 result_merge_str = merge_str.mergeAlternately('ab', 'pqrs')
 
 print(result_merge_str)
