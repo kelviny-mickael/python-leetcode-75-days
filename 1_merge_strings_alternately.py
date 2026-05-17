@@ -38,8 +38,7 @@ Restrições:
 word1 e word2 são compostas por letras minúsculas do alfabeto inglês.
 """
 
-
-class Solution():
+class Solution(object):
     
     def mergeAlternately(self, str1, str2, merge_str = ''):
         self.str1 = str1
