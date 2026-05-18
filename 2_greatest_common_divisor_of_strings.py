@@ -40,11 +40,19 @@ class Solution(object):
     def gcdOfStrings(self, str1, str2):
         self.str1 = str1
         self.str2 = str2
-        self.result = ''
+        self.result = set()
         
-        for ind, value in enumerate(str1):
-            print(ind, value)
+        for ind, value_str in enumerate(self.str1):
+            if value_str in str2:
+                self.result.add(value_str)
+            else:
+                return ""
+            
+        return ''.join(sorted(self.result))
         
 inst = Solution()
 
 print(inst.gcdOfStrings('ABCABC', 'ABC'))
+print(inst.gcdOfStrings('ABABAB', 'ABAB'))
+print(inst.gcdOfStrings('LEET', 'CODE'))
+print(inst.gcdOfStrings('AAAAAB', 'AAA'))
