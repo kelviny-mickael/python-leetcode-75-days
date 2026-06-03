@@ -53,7 +53,6 @@ class Solution(object):
         return self.mdc_both
     
     def gcdOfStrings(self, str1, str2, result_mdc = ''):
-        
         self.str1 = str1
         self.str2 = str2
         self.result_mdc = result_mdc
